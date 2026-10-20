@@ -1,0 +1,30 @@
+[Unit]
+Description=Ping Pong lobby and match server
+Documentation=file:///usr/share/doc/pingpong-net/README.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/pingpong server --port 7777
+Restart=on-failure
+RestartSec=2
+
+# The server needs no files and no privileges: run it in a tight sandbox.
+DynamicUser=yes
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictAddressFamilies=AF_INET AF_INET6
+RestrictNamespaces=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+SystemCallArchitectures=native
+LimitNOFILE=2048
+
+[Install]
+WantedBy=multi-user.target

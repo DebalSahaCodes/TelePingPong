@@ -1,0 +1,15 @@
+Package: pingpong-net
+Version: @VERSION@
+Section: games
+Priority: optional
+Architecture: @ARCH@
+Installed-Size: @SIZE@
+Maintainer: Pingpong Net <root@localhost>
+Description: terminal ping pong over the internet (client and lobby server)
+ Play ping pong against people on other networks. One machine runs the
+ lobby and match server ("pingpong server"); players run "pingpong" to host,
+ find and join matches. Extra players wait in a queue and the loser of each
+ game rotates to the back of it.
+ .
+ The binary is statically linked and has no dependencies. A systemd unit
+ (pingpong-server.service) is installed but not enabled.
