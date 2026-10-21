@@ -1,4 +1,4 @@
-# Ping Pong - online multiplayer, written in C
+# Tele Ping Pong - online multiplayer, written in C
 
 Two players on different networks play ping pong in a terminal. Anyone can host a
 match, anyone can find and join it, and extra players wait in a queue.
